@@ -1,0 +1,97 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/* Provide sufficient contrast against white background */
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(https://colorlib.com/etc/tb/Table_Responsive_v2/fonts/poppins/Poppins-Regular.ttf)
+}
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-family: Poppins-Regular;
+}
+
+    ul li {
+        list-style: none;
+        margin: 0 20px;
+        transition: 0.1s;
+        font-weight: bold;
+    }
+
+        ul li a {
+            display: block;
+            position: relative;
+            text-decoration: none;
+            padding: 5px;
+            font-size: 15px;
+            font-family: sans-serif;
+            color: black;
+            transition: 0.5s;
+            font-family: Poppins-Regular;
+        }
+
+    ul:hover li a {
+        transform: scale(1.5);
+        opacity: 0.2;
+        filter: blur(3px);
+        font-family: Poppins-Regular;
+    }
+        ul li a:hover {
+        transform: scale(1.75);
+        color: white;
+        opacity: 1;
+        filter: blur(0);
+        text-decoration: none;
+        font-family: Poppins-Regular;
+    }
+    ul li a:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #72bcfc; 
+        border-radius: 4px;
+        transform: scaleX(0);
+        z-index: -1;
+    }
+
+    ul li a:hover:before {
+        transition: 0.3s;
+        transform: scaleX(1);
+    }
+
+nav {
+    width: 100%;
+    top: 0;
+    z-index: 30;
+    position: fixed;
+}

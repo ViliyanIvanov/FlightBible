@@ -1,0 +1,88 @@
+﻿.quote {
+    width: 100%;
+    font-family: cursive;
+}
+
+
+.author {
+    width: 500px;
+    text-align: right;
+}
+
+.sub-head {
+}
+
+.Buttons {
+    background-color: #56baed;
+    border: none;
+    color: white;
+    padding: 15px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 100px 20px 10px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-left: 5%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.12), 0 8px 8px rgba(0,0,0,0.12), 0 16px 16px rgba(0,0,0,0.12), 0 32px 32px rgba(0,0,0,0.12);
+}
+
+    .Buttons:hover {
+        background-color: #39ace7;
+        color: white;
+        text-decoration: none;
+    }
+
+#firstButton {
+    margin-left: 20%;
+}
+
+.banner-text {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    width: 550px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.12), 0 8px 8px rgba(0,0,0,0.12), 0 16px 16px rgba(0,0,0,0.12), 0 32px 32px rgba(0,0,0,0.12);
+    margin-left: 20%;
+    margin-right: auto;
+    margin-top: 13%;
+}
+
+.banner-container {
+    background-image: url();
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    height: 75%;
+}
+
+.buttons-wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+#banner-bg {
+    position: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    height: 75%;
+    z-index: -1;
+    filter: blur(3px);
+    background-attachment: unset;
+}

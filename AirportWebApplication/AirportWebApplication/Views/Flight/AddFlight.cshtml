@@ -1,0 +1,87 @@
+﻿@model AddFlightFormModel
+<link rel="stylesheet" href="~/css/CreateFlight.css" asp-append-version="true" />
+<img src="https://i.pinimg.com/originals/d6/d1/e0/d6d1e0bbdd2eda8f44a2125154670e82.gif" id="bg">
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Create Flight </h2>
+        <!-- Login Form -->
+        <form asp-action="AddFlight" asp-area="" asp-controller="Flight">
+            <div id="FirstForm">
+                <label class="fadeIn third" for="AirlineName">Airline</label>
+                <input required type="text" asp-for="AirlineName" id="AirlineName" class="fadeIn third, error-check" maxlength="5" placeholder="Enter AirlineName">
+                <span asp-validation-for="AirlineName" class="text-danger"></span>
+
+                <label class="fadeIn third" for="Origin">Origin Airport</label>
+                <input required list="hosting-plan" type="text" asp-for="OriginAirportName" id="Origin" class="fadeIn third, error-check" placeholder="Enter Origin">
+                <span asp-validation-for="OriginAirportName" class="text-danger"></span>
+
+                <label class="fadeIn third" for="Destination">Destination Airport</label>
+                <input required list="hosting-plan" type="text" asp-for="DestAirportName" id="Destination" class="fadeIn third, error-check" placeholder="Enter Destination">
+                <span asp-validation-for="DestAirportName" class="text-danger"></span>
+                <br />
+                <label class="fadeIn third, dateLabel" for="TakeOffTime">Depart date</label>
+                <input required asp-for="TakeOffTime" id="TakeOffTime" class="fadeIn third, error-check" placeholder="Enter Take Off Time"
+                       value=@DateTime.Today min=@DateTime.Now.ToString("yyyy-MM-ddTHH:mm") max="2023-12-31">
+
+                <label class="fadeIn third, dateLabel" for="TakeOffTime">Landing date</label>
+                <input required asp-for="LandingTime" id="LandingTime" class="fadeIn third, error-check" placeholder="Enter Landing Time"
+                       value=@DateTime.Today min=@DateTime.Now.AddHours(1).ToString("yyyy-MM-ddTHH:mm") max="2023-12-31">
+                <button class="RedirectButtons" onclick="switchForm()">Next</button>
+            </div>
+            <br />
+            <div id="SecondForm">
+                <h5 class="fadeIn third">EconomyClass</h5>
+                <input id="chooseRows" type="number" min="0" max="20" value="" asp-for="rowsEconomy" step="1" onkeydown="return false" class="fadeIn third">
+                <input id="chooseCols" type="number" min="0" max="6" value="" asp-for="colsEconomy" step="1" onkeydown="return false" class="fadeIn third">
+                <h5 class="fadeIn third">BusinessClass</h5>
+                <input id="chooseRows" type="number" min="0" max="20" value="" asp-for="rowsBusiness" step="1" onkeydown="return false" class="fadeIn third">
+                <input id="chooseCols" type="number" min="0" max="6" value="" asp-for="colsBusiness" step="1" onkeydown="return false" class="fadeIn third">
+                <h5 class="fadeIn third">FirstClass</h5>
+                <input id="chooseRows" type="number" min="0" max="20" value="" asp-for="rowsFirst" step="1" class="fadeIn third" onkeydown="return false" />
+                <input id="chooseCols" type="number" min="0" max="6" value="" asp-for="colsFirst" step="1" onkeydown="return false" class="fadeIn third">
+                <input type="submit" class="fadeIn fourth" value="Submit" />
+            </div>
+        </form>
+        <datalist id="hosting-plan">
+            @{
+                foreach (var airport in Model.Airports)
+                {
+                    <option>@airport.Name</option>
+                }
+            }
+        </datalist>
+    </div>
+</div>
+
+<script>
+    var a = 1;
+    function switchForm() {
+@section Scripts {
+
+        <partial name="_ValidationScriptsPartial" />
+}
+        let isDone = true;
+        Array.from(document.getElementsByClassName("text-danger")).forEach(s => {
+            if (s.childNodes.length > 0) {
+                isDone = false;
+            }
+        })
+        Array.from(document.getElementsByClassName("error-check")).forEach(p => {
+            var check = p.value;
+            if (check == "") {
+                isDone = false;
+                console.log(":(");
+            }
+        })
+        if (isDone) {
+            console.log("us");
+            Array.from(document.getElementsByTagName('span')).forEach(s => { s.style.display = "none" });
+            let firstForm = document.getElementById("FirstForm");
+            let secondForm = document.getElementById("SecondForm");
+            firstForm.style.display = "none";
+            secondForm.style.display = "block";
+        }
+    }
+</script>
+<script src="~/js/FlightFormSwitch.js"></script>

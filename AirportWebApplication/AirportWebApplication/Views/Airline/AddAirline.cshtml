@@ -1,0 +1,23 @@
+﻿@model AddAirlineFormModel
+
+<link rel="stylesheet" href="~/css/CreateAirline.css" asp-append-version="true" />
+<img src="https://cdn.dribbble.com/users/1774872/screenshots/5506429/plane-dr.gif" id="bg">
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Create Airline </h2>
+        <!-- Login Form -->
+        <form asp-action="AddAirline" asp-area="" asp-controller="Airline">
+            <label class="fadeIn third" for="Name">Name</label>
+            <input required title="Name must be shorter than 6 characters" type="text" asp-for="Name" id="Name" class="fadeIn third" placeholder="Enter Name" maxlength="5">
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+            <input type="submit" class="fadeIn fourth" value="Submit">
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+
+    <partial name ="_ValidationScriptsPartial" />
+}

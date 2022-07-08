@@ -1,0 +1,38 @@
+﻿@model AddAirportFormModel
+<link rel="stylesheet" href="~/css/CreateAirport.css" asp-append-version="true" />
+<img src="https://cdn.dribbble.com/users/721524/screenshots/2945201/shot-final-sonya-airport.gif" id="bg">
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Create Airport </h2>
+        <!-- Login Form -->
+        <form asp-action="AddAirport" asp-area="" asp-controller="Airport">
+            <label class="fadeIn third" for="Id">ID</label>
+            <input required type="text" asp-for="Id" id="Id" class="fadeIn second" placeholder="Enter Id " minlength="3" maxlength="3">
+            <span asp-validation-for="Id" class="text-danger"></span>
+
+            <label class="fadeIn third" for="Name">Name</label>
+            <input required type="text" asp-for="Name" id="Name" class="fadeIn third" placeholder="Enter Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+            <label class="fadeIn third" for="City">City</label>
+            <input required type="text" asp-for="City" id="City" class="fadeIn third" placeholder="Enter City">
+            <span asp-validation-for="City" class="text-danger"></span>
+
+            <label class="fadeIn third" for="Country">Country</label>
+            <input required type="text" asp-for="Country" id="Country" class="fadeIn third" placeholder="Enter Country">
+            <span asp-validation-for="Country" class="text-danger"></span>
+
+            <label class="fadeIn third" for="Address">Address</label>
+            <input required type="text" asp-for="Address" id="Address" class="fadeIn third" placeholder="Enter Address">
+            <span style="position:inherit;" asp-validation-for="Address" class="text-danger"></span>
+            <br />
+            <input id="submitButton" type="submit" class="fadeIn fourth" value="Submit">
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+}

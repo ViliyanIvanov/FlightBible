@@ -1,0 +1,28 @@
+﻿@model List<AirlinesListViewModel>
+<link rel="stylesheet" href="~/css/ViewAirlines.css" asp-append-version="true" />
+<div class="container-table100">
+    <img src="https://thumbs.gfycat.com/AmusedDecentLhasaapso-size_restricted.gif" id="bg">
+    <div class="wrap-table100">
+        <div class="table">
+            <div class="row header">
+                <div class="cell">
+                    Name
+                </div>
+            </div>
+            @{
+                foreach (var airline in Model)
+                {
+                    <div class="row">
+                        <div class="cell" data-title="Name">
+                            @airline.Name
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <div class="RedirectButtons-wrapper">
+        <a class="RedirectButtons" asp-action="AddAirline" asp-controller="Airline">Create airline</a>
+        <a class="RedirectButtons" asp-action="Index" asp-controller="Home">Return to home</a>
+    </div>
+</div>    

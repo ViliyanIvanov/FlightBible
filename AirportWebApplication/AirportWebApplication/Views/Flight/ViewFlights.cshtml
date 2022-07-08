@@ -1,0 +1,60 @@
+﻿@model List<FlightsListViewModel>
+<link rel="stylesheet" href="~/css/ViewFlights.css" asp-append-version="true" />
+<div class="container-table100">
+    <img src="https://thumbs.gfycat.com/AmusedDecentLhasaapso-size_restricted.gif" id="bg">
+    <div class="wrap-table100">
+        <div class="table">
+            <div class="row header">
+                <div class="cell">
+                    ID
+                </div>
+                <div class="cell">
+                    Origin
+                </div>
+                <div class="cell">
+                    Destination
+                </div>
+                <div class="cell">
+                    Take off date
+                </div>
+                <div class="cell">
+                    Landing date
+                </div>
+                <div class="cell">
+                    People flying
+                </div>
+            </div>
+            @{
+                foreach (var flight in Model)
+                {
+                    <a href="/Seat/Index?flightId=@flight.Id" class="row">
+                        <div class="cell" data-title="Id">
+
+                            @flight.Id
+                        </div>
+                        <div class="cell" data-title="Origin">
+                            @flight.Origin.Name
+                        </div>
+                        <div class="cell" data-title="Destination">
+                            @flight.Destination.Name
+                        </div>
+                        <div class="cell" data-title="Take Off">
+                            @flight.TakeOffTime
+                        </div>
+                        <div class="cell" data-title="Landing">
+                            @flight.LandingTime
+                        </div>
+                        <div class="cell" data-title="Booked">
+                            @flight.BookedCount / @flight.Seats.Count
+                        </div>
+                    </a>
+                }
+            }
+
+        </div>
+    </div>
+    <div id="plsWork" class="RedirectButtons-wrapper">
+        <a class="RedirectButtons" asp-action="AddFlight" asp-controller="Flight">Create Flight</a>
+        <a class="RedirectButtons" asp-action="Index" asp-controller="Home">Return to home</a>
+    </div>
+</div>    

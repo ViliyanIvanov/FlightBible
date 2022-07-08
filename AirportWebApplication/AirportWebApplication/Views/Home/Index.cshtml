@@ -1,0 +1,27 @@
+﻿﻿<head>
+
+    <link rel="stylesheet" href="~/css/Homepage.css" />
+    <title>Homepage design</title>
+</head>
+
+
+<body>
+    <div class="banner-container">
+        <div class="banner-area">
+            <img id="banner-bg" src="https://i.pinimg.com/originals/3f/00/4f/3f004fbd0825ffbd4b9b11656a38f451.gif" />
+            <div class="banner-text">
+                <h1>FlightBible</h1>
+                <div class="sub-head">
+                    <p class="quote">"Same with anyone who's been flying for years and loves it still...we're part of a world we deeply love."</p>
+                    <br />
+                    <p class="author">~ Richard Bach.</p>
+                </div>
+            </div>
+        </div>
+        <div class="buttons-wrap">
+            <a id="firstButton" asp-action="AddAirport" asp-controller="Airport" class="Buttons">Create an airport</a>
+            <a asp-action="AddAirline" asp-controller="Airline" class="Buttons">Create an airline</a>
+            <a asp-action="AddFlight" asp-controller="Flight" class="Buttons">Create a flight</a>
+        </div>
+    </div>
+</body>

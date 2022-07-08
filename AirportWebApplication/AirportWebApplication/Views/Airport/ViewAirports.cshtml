@@ -1,0 +1,54 @@
+﻿@model List<AirportsListViewModel>
+<link rel="stylesheet" href="~/css/ViewAirports.css" asp-append-version="true" />
+<img src="https://thumbs.gfycat.com/AmusedDecentLhasaapso-size_restricted.gif" id="bg">
+<div class="container-table100">
+    <div class="wrap-table100">
+        <div class="table">
+            <div class="row header">
+                <div class="cell">
+                    ID
+                </div>
+                <div class="cell">
+                    Name
+                </div>
+                <div class="cell">
+                    City
+                </div>
+                <div class="cell">
+                    Country
+                </div>
+                <div class="cell">
+                    Address
+                </div>
+            </div>
+
+            @{
+                foreach (var airport in Model)
+                {
+                    <div class="row">
+                        <div class="cell" data-title="Id">
+                            @airport.Id
+                        </div>
+                        <div class="cell" data-title="Name">
+                            @airport.Name
+                        </div>
+                        <div class="cell" data-title="City">
+                            @airport.City
+                        </div>
+                        <div class="cell" data-title="Country">
+                            @airport.Country
+                        </div>
+                        <div class="cell" data-title="Address">
+                            @airport.Address
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <div class="RedirectButtons-wrapper">
+        <a class="RedirectButtons" asp-action="AddAirport" asp-controller="Airport">Create Airport</a>
+        <a class="RedirectButtons" asp-action="Index" asp-controller="Home">Return to home</a>
+    </div>
+</div>
+           

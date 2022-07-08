@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AirportWebApplication.Data.Seat>
+
+
+<link rel="stylesheet" href="~/css/ViewSeats.css" asp-append-version="true" />
+<div class="container-table100">
+    <img src="https://thumbs.gfycat.com/AmusedDecentLhasaapso-size_restricted.gif" id="bg">
+    <div class="wrap-table100">
+        <div class="table">
+            <div class="row header">
+                <div class="cell">
+                    Symbols
+                </div>
+                <div class="cell">
+                    Class
+                </div>
+                <div class="cell">
+                    Status
+                </div>
+                <div class="cell">
+                    Reserve
+                </div>
+            </div>
+            @{
+                foreach (var seat in Model)
+                {
+                    <div class="row">
+                        <div class="cell" data-title="Symbols">
+                            @seat.Symbols
+                        </div>
+                        <div class="cell" data-title="Class">
+                            @seat.Class
+                        </div>
+                        <div class="cell" data-title="Status">
+                            @if (!seat.IsBooked)
+                            {
+                                <a style="color:green">available</a>
+                            }
+                            else
+                            {
+                                <a style="color:red">booked</a>
+                            }
+                        </div>
+                        <div class="cell" data-title="buttonToBook">
+                            @if (!seat.IsBooked)
+                            {
+                                <a asp-action="BookSeat" asp-controller="Seat" asp-route-seatId=@seat.Id>book</a>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <div class="RedirectButtons-wrapper">
+        <a class="RedirectButtons" asp-action="Index" asp-controller="Home">Return to home</a>
+    </div>
+</div>

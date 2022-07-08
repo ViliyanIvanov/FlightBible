@@ -1,0 +1,32 @@
+﻿@model SearchFlightsFormModel
+<link rel="stylesheet" href="~/css/CreateFlight.css" asp-append-version="true" />
+<img src="https://cdn.dribbble.com/users/1195555/screenshots/4933777/dribble_1.gif" id="bg">
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Suitable flights </h2>
+        <!-- Login Form -->
+        <form asp-action="FoundFlights" asp-area="" asp-controller="Flight">
+            <label class="fadeIn third" for="Origin">Origin Airport</label>
+            <input required list="hosting-plan" type="text" asp-for="OriginAirportName" id="Origin" class="fadeIn third" placeholder="Enter Origin">
+            <span asp-validation-for="OriginAirportName" class="text-danger"></span>
+
+            <label class="fadeIn third" for="Destination">Origin Airport</label>
+            <input required list="hosting-plan" type="text" asp-for="DestAirportName" id="Destination" class="fadeIn third" placeholder="Enter Destination">
+            <span asp-validation-for="DestAirportName" class="text-danger"></span>
+
+
+            <label class="fadeIn third" for="Date">Date</label>
+            <input required type="date" asp-for="Date" id="Date" class="fadeIn third" placeholder="Enter date"
+                   min="2022-01-01" max="2023-12-31">
+
+            <input href="/Flight/FoundFlights" type="submit" class="fadeIn fourth" value="Submit" />
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+}

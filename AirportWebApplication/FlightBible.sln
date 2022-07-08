@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightBible", "AirportWebApplication\FlightBible.csproj", "{55B135DE-7E9C-4C1A-A971-0E19DDBC83CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55B135DE-7E9C-4C1A-A971-0E19DDBC83CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B135DE-7E9C-4C1A-A971-0E19DDBC83CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B135DE-7E9C-4C1A-A971-0E19DDBC83CC}.Debug|x64.ActiveCfg = Debug|x64
+		{55B135DE-7E9C-4C1A-A971-0E19DDBC83CC}.Debug|x64.Build.0 = Debug|x64
+		{55B135DE-7E9C-4C1A-A971-0E19DDBC83CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B135DE-7E9C-4C1A-A971-0E19DDBC83CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55B135DE-7E9C-4C1A-A971-0E19DDBC83CC}.Release|x64.ActiveCfg = Release|x64
+		{55B135DE-7E9C-4C1A-A971-0E19DDBC83CC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EB898FD-CA51-45D0-A14B-669ACA39D9E0}
+	EndGlobalSection
+EndGlobal
